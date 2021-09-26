@@ -1,0 +1,42 @@
+{
+  "name": "cache-bust-plugin",
+  "version": "0.0.0",
+  "description": "cache-bust-plugin",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "types": "./types/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rimraf ./build",
+    "lint": "eslint --config .eslintrc.js ./src ./test",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && npm rum build:cjs && npm run build:esm && npm run build:es2020",
+    "build:cjs": "tsc --project tsconfig-release.json --module commonjs --target es5 --outDir build/cjs",
+    "build:esm": "tsc --project tsconfig-release.json --module es2020 --target es5 --outDir build/esm",
+    "build:es2020": "tsc --project tsconfig-release.json --module es2020 --target es2020 --outDir build/es2020",
+    "copy": "cpy ./package.json ./README.md ./LICENSE.md ./build",
+    "postversion": "git push && git push --tags",
+    "release": "npm run lint && npm run test && npm run build && npm version patch && npm run copy && npm publish ./build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmuchall/cache-bust-plugin.git"
+  },
+  "keywords": [],
+  "author": "Rob Muchall <rmuchall@protonmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmuchall/cache-bust-plugin/issues"
+  },
+  "homepage": "https://github.com/rmuchall/cache-bust-plugin#readme",
+  "devDependencies": {
+    "@types/node": "16.10.1",
+    "@typescript-eslint/eslint-plugin": "4.31.2",
+    "@typescript-eslint/parser": "4.31.2",
+    "cpy-cli": "3.1.1",
+    "eslint": "7.32.0",
+    "rimraf": "3.0.2",
+    "typescript": "4.4.3",
+    "webpack": "5.54.0"
+  }
+}
