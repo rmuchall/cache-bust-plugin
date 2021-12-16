@@ -1,6 +1,6 @@
 {
   "name": "cache-bust-plugin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "cache-bust-plugin",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
