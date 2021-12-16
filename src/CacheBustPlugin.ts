@@ -19,14 +19,10 @@ export class CacheBustPlugin {
                 },
                 (assets) => {
                     let htmlTemplate = readFileSync(path.resolve(process.cwd(), "./index.html"), "utf8");
-
-                    // Only cache bust in production
-                    if (process.env["NODE_ENV"] === "production") {
-                        for (const chunk of Array.from(compilation.chunks)) {
-                            for (const file of Array.from(chunk.files)) {
-                                // TODO: Should really use contentHash here
-                                htmlTemplate = htmlTemplate.replace(file, `${file}?hash=${chunk.hash}`);
-                            }
+                    for (const chunk of Array.from(compilation.chunks)) {
+                        for (const file of Array.from(chunk.files)) {
+                            // TODO: Should really use contentHash here
+                            htmlTemplate = htmlTemplate.replace(file, `${file}?hash=${chunk.hash}`);
                         }
                     }
 
