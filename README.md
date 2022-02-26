@@ -6,7 +6,7 @@
 cache-bust-plugin is a tiny Webpack plugin for generating bundle hashes. It's a useful alternative to [html-webpack-plugin](https://www.npmjs.com/package/html-webpack-plugin) for when you only require cache-busting.
 
 ## Usage
-```
+```typescript
 import {CacheBustPlugin} from "cache-bust-plugin";
 
 module.exports {
@@ -18,16 +18,15 @@ module.exports {
     ]
 }
 ```
-If the writeToIndexHtml option is used then cache-bust-plugin searches for bundle file names in index.html (located in the root directory of your project) and appends bundle hashes using a query string. <br />
-```
+If the `writeToIndexHtml` option is used then cache-bust-plugin searches for bundle file names in `index.html` (located in the root directory of your project) and appends bundle hashes using a query string. <br />
+```html
 index.html (before cache-bust-plugin) =>
 <script type="text/javascript" src="/app.js"></script>
 index.html (after cache-bust-plugin) =>
 <script type="text/javascript" src="/app.js?hash=68b1a4d74cf4ef2b516f492bef010d8e"></script>
 ```
-If the writeToJson option is used then cache-bust-plugin will write the bundle hashes to JSON formatted text file. <br />
-```
-version.json =>
+If the writeToJson option is used then cache-bust-plugin will write the bundle hashes to a JSON formatted text file. <br />
+```json5
 {
   "app.css": "faa879842aef4070b5563ccdc0016cf8",
   "app.js": "faa879842aef4070b5563ccdc0016cf8",
