@@ -13,7 +13,7 @@ Install the [cache-bust-plugin package](https://www.npmjs.com/package/cache-bust
 ```typescript
 import {CacheBustPlugin} from "cache-bust-plugin";
 
-module.exports {
+export const webpackConfig = {
     // ... Webpack config
     plugins: [
         new CacheBustPlugin({
