@@ -5,6 +5,10 @@
 ## What is cache-bust-plugin?
 cache-bust-plugin is a tiny Webpack plugin for generating bundle hashes. It's a useful alternative to [html-webpack-plugin](https://www.npmjs.com/package/html-webpack-plugin) for when you only require cache-busting.
 
+## Installation
+Install the [cache-bust-plugin package](https://www.npmjs.com/package/cache-bust-plugin) from npm. <br/>
+`npm install cache-bust-plugin`
+
 ## Usage
 ```typescript
 import {CacheBustPlugin} from "cache-bust-plugin";
