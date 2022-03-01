@@ -1,6 +1,6 @@
 {
   "name": "cache-bust-plugin",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "cache-bust-plugin",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
@@ -21,7 +21,10 @@
     "type": "git",
     "url": "git+https://github.com/rmuchall/cache-bust-plugin.git"
   },
-  "keywords": ["cache", "bust"],
+  "keywords": [
+    "cache",
+    "bust"
+  ],
   "author": "Rob Muchall <rmuchall@protonmail.com>",
   "license": "MIT",
   "bugs": {
